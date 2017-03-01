@@ -1,0 +1,19 @@
+= Open and collaborative VosViewer tutorials
+Clément Levallois <clementlevallois@gmail.com>
+2017-03-01
+:revnumber: 1.0
+:example-caption!:
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../../main/java]
+
+Website: https://seinecle.github.io/vosviewer-tutorials/
+
+This is a project to write Vosviewer tutorials in an open and collaborative way:
+
+- using git for collaboration and versioning
+- written in asciidoc to ease the conversion to pdf, html, slides, etc.
+- tutorials use a lot of charts. I use Google Drawings for that. Very practical for online editing, and live updates: charts made on Google Drawing can be embedded in web documents, so that any correction brought to a chart is instantaneously reflected in the web versions of the tutorials. Great stuff.
+
+The project has started in March 2017. Want to join? Questions? Create a Github account and open an issue here!
+
+by http://clementlevallois.net[Clément Levallois], Associate Professor at http://www.emlyon.com[emlyon business school].
