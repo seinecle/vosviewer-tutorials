@@ -180,7 +180,7 @@
                             </attributes>
                             <extensions>
                                 <extension>
-                                    <className>Controller.SlidesPreProcessor</className>
+                                    <className>net.clementlevallois.asciidoc.extensions.SlidesPreProcessor</className>
                                 </extension>
                             </extensions>
 
@@ -205,7 +205,7 @@
                             </attributes>
                             <extensions>
                                 <extension>
-                                    <className>Controller.PdfPreProcessor</className>
+                                    <className>net.clementlevallois.asciidoc.extensions.PdfPreProcessor</className>
                                 </extension>
                             </extensions>
 
@@ -224,7 +224,7 @@
                             <sourceHighlighter>coderay</sourceHighlighter>
                             <extensions>
                                 <extension>
-                                    <className>Controller.HtmlPreProcessor</className>
+                                    <className>net.clementlevallois.asciidoc.extensions.HtmlPreProcessor</className>
                                 </extension>
                             </extensions>
                             <attributes>

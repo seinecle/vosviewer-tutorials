@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="author" content="Clément Levallois" /><title>A tutorial for vosviewer</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js-3.1.0/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js-3.1.0/css/theme/white.css" id="theme" /><style>/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+/*pre.CodeRay {background-color:#f7f7f8;}*/
+.CodeRay .line-numbers{border-right:1px solid #d8d8d8;padding:0 0.5em 0 .25em}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.5em;color:rgba(0,0,0,.3)}
+.CodeRay .line-numbers strong{color:rgba(0,0,0,.4)}
+table.CodeRay{border-collapse:separate;border-spacing:0;margin-bottom:0;border:0;background:none}
+table.CodeRay td{vertical-align: top;line-height:1.45}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.line-numbers>pre{padding:0;color:rgba(0,0,0,.3)}
+table.CodeRay td.code{padding:0 0 0 .5em}
+table.CodeRay td.code>pre{padding:0}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}</style><link href="reveal.js-3.1.0/lib/css/zenburn.css" rel="stylesheet" /><script>document.write( '<link rel="stylesheet" href="reveal.js-3.1.0/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section class="title"><h1>A tutorial for vosviewer</h1><div class="preamble"><div class="paragraph"><p>last modified: 2017-03-30</p></div>
+<div class="imageblock stretch" style="text-align: center"><img src="images/vosviewer-logo.png" alt="vosviewer logo" width="450" /></div></div><p class="author"><small>Clément Levallois</small></p></section>
+<section id="__escape_or_o_to_see_all_sides_f11_for_full_screen_s_for_speaker_notes"><h2>'Escape' or 'o' to see all sides, F11 for full screen, 's' for speaker notes</h2></section>
+<section id="_presentation_of_this_tutorial"><h2>Presentation of this tutorial</h2></section>
+<section><div class="paragraph"><p>This tutorial explains how to create a semantic map like this one:</p></div>
+<div class="imageblock stretch" style="text-align: center"><img src="images/vw-1-en.png" alt="vw 1 en" height="100%" /></div><div class="title">Figure 1. a map with VosViewer</div></section>
+<section><div class="paragraph"><p>VosViewer is developed by Nees Jan van Eck and Ludo Waltman, researchers at the CWTS Leiden of Leiden University in Leiden.</p></div></section>
+<section><div class="paragraph"><p>The software was built for the analysis of scientometric data (the scientific study of the scientific activity), but the software has a broader relevance.</p></div>
+<div class="paragraph"><p>In particular, VosViewer is <strong>particularly good at producing textual maps</strong> of any sorts, not just from scientometric datasets.</p></div>
+<div class="paragraph"><p>A 2.0 version of VosViewer is announced for 2017, capable of handling larger datasets and broadening its focus (will explicitly target non-scientometricians).</p></div></section>
+<section id="_importing_a_dataset"><h2>Importing a dataset</h2><div class="paragraph"><p>We can use several methods:</p></div>
+<div class="ulist"><ul><li><p>directly importing datasets of a bibliometric nature (Web of Knowledge, Scopus, Medline or RIS)</p></li><li><p>importing a text, where each paragraph will be considered a "unit of text" to compute co-occurrences.</p></li><li><p>importing your own networks (created for example with Gephi, etc.)</p></li></ul></div>
+<div class="paragraph"><p>Let&#8217;s see each of these methods in turn.</p></div></section>
+<section><h3>1. Importing a bibliometric dataset (WoK, Scopus, etc.)</h3></section>
+<section><div class="paragraph"><p>We need a bibliometric dataset to practice.</p></div>
+<div class="paragraph"><p><a href="../resources/pubmed_medline.zip">download this zip file</a> and unzip it on your computer.</p></div></section>
+<section><div class="paragraph"><p>The file <code>pubmed_medline.txt</code> inside the zip contains 1484 research articles from the PubMed database of scientific reports, retrieved by conducting this query:</p></div>
+<div class="paragraph"><p>"social neuroscience" OR "neuroeco*" OR "decision neuroscience"</p></div>
+<div class="paragraph"><p>&#8594; The query can be seen at <a href="https://www.ncbi.nlm.nih.gov/pubmed?term=(%22social%20neuroscience%22%20OR%20%22neuroeco*%22%20OR%20%22decision%20neuroscience%22)">online here</a>.</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-2-en_New.png" alt="vw 2 en New" height="100%" /></div><div class="title">Figure 2. Follow the wizard for biblio data - 1</div></section>
+<section><div class="paragraph"><p>Get your file <code>pubmed_medline.txt</code> ready as we need it now:</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-3-en_New.png" alt="vw 3 en New" height="100%" /></div><div class="title">Figure 3. Follow the wizard for biblio data - 2</div></section>
+<section><div class="paragraph"><p>Now is the step when you decide what kind of network you are interested in.</p></div>
+<div class="dlist"><dl><dt class="hdlist1">TIP</dt><dd><p>Careful, a network of co-occurrences of keywords does not use the abstracts of the bibliographic entries, but only the keywords supplied by the authors or the editor. These are typically much less informative. There is another way in VosViewer to work with abstracts.</p></dd></dl></div>
+<div class="paragraph"><p>The full web link to the explanation of full vs binary counting: <a href="http://seinecle.github.io/gephi-tutiorals/working-with-text-en.html#binary-counting" class="bare">http://seinecle.github.io/gephi-tutiorals/working-with-text-en.html#binary-counting</a></p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-4-en_New.png" alt="vw 4 en New" height="100%" /></div><div class="title">Figure 4. Follow the wizard for biblio data - 3</div></section>
+<section><div class="paragraph"><p>You decide how frequent an author should be in your dataset to be included in the visualization.
+Here, individuals who have authored less than 5 papers in the collection will be left out.</p></div>
+<div class="imageblock stretch" style="text-align: center"><img src="images/vw-5-en.png" alt="vw 5 en" height="100%" /></div><div class="title">Figure 5. Follow the wizard for biblio data - 4</div></section>
+<section><div class="paragraph"><p>Here you can decide that authors who are just weakly connected to others (because they did not co-author much) can be left out.</p></div>
+<div class="imageblock stretch" style="text-align: center"><img src="images/vw-6-en.png" alt="vw 6 en" height="100%" /></div><div class="title">Figure 6. Follow the wizard for biblio data - 5</div></section>
+<section><div class="paragraph"><p>The next screen is a table to recap which authors are going to be included in the visualization.</p></div>
+<div class="paragraph"><p>We can notice there are near duplicates (<code>luo yj</code> and <code>luo y</code>), which means we should have used the thesaurus to merge them earlier.</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-7-en.png" alt="vw 7 en" height="100%" /></div><div class="title">Figure 7. Follow the wizard for biblio data - 6</div></section>
+<section><div class="paragraph"><p>The last step of the wizard is an invitation to show only the largest group of connected authors. Smaller groups, isolated from this big group, would be discarded.</p></div>
+<div class="paragraph"><p>Clicking on "No" makes sure we see all groups.</p></div>
+<div class="imageblock stretch" style="text-align: center"><img src="images/vw-8-en.png" alt="vw 8 en" height="100%" /></div><div class="title">Figure 8. Follow the wizard for biblio data - 7</div></section>
+<section><div class="paragraph"><p>The result is a network made of groups of authors and their connections, corresponding to the fact that they co-authored papers.</p></div>
+<div class="paragraph"><p>Bigger nodes represent authors with the most publications.</p></div>
+<div class="paragraph"><p>Notice that the background can be switched to black - it can make it easier to read.</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-9-en_New.png" alt="vw 9 en New" height="100%" /></div><div class="title">Figure 9. Follow the wizard for biblio data - 8</div></section>
+<section><div class="paragraph"><p>Before going into the details of the visualization, we&#8217;ll see how to import to other kinds of data source:</p></div></section>
+<section><h3>1. Importing a text (of a bibliometric nature or not)</h3></section>
+<section><div class="paragraph"><p>We need a dataset to practice.</p></div>
+<div class="paragraph"><p>The dataset must be a single text file, where each unit of text <strong>is a paragraph</strong>. The network will be made of most frequent terms in the network. Terms appearing in the same paragraphs will be connected.</p></div>
+<div class="paragraph"><p>See <a href="https://seinecle.github.io/gephi-tutorials/generated-html/working-with-text-en.html#_computing_connections_edges_in_the_network">this page</a> for more precisions on units of text / paragraphs.</p></div></section>
+<section><div class="paragraph"><p><a href="../resources/pubmed_abstracts.zip">download this zip file</a> and unzip it on your computer.</p></div></section>
+<section><div class="paragraph"><p>The file <code>pubmed_abstracts.txt</code> inside the zip contains 1484 abstracts (short summaries) of research articles from the PubMed database of scientific reports, retrieved by conducting this query:</p></div>
+<div class="paragraph"><p>"social neuroscience" OR "neuroeco*" OR "decision neuroscience"</p></div>
+<div class="paragraph"><p>&#8594; The query can be seen at <a href="https://www.ncbi.nlm.nih.gov/pubmed?term=(%22social%20neuroscience%22%20OR%20%22neuroeco*%22%20OR%20%22decision%20neuroscience%22)">online here</a>.
+(the query returns more than 1484 results, because some articles have no abstract).</p></div></section>
+<section><div class="paragraph"><p>As a sidenote, these abstracts were extracted from the pubmed records in the following way:</p></div>
+<div class="ulist"><ul><li><p>installing Anaconda, a toolkit for Python with many useful things inside</p></li><li><p>installing Metaknowledge, a bibliometric toolkit in Python</p></li><li><p>running this Jupyter notebook:</p></li></ul></div></section>
+<section><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="Python language-Python"><span class="keyword">import</span> <span class="include">metaknowledge</span> <span class="keyword">as</span> mk
+<span class="keyword">import</span> <span class="include">networkx</span> <span class="keyword">as</span> nx
+<span class="keyword">import</span> <span class="include">matplotlib.pyplot</span> <span class="keyword">as</span> plt
+%matplotlib inline
+<span class="keyword">import</span> <span class="include">metaknowledge.contour</span> <span class="keyword">as</span> mkv
+<span class="keyword">import</span> <span class="include">pandas</span>
+
+RC = mk.RecordCollection(<span class="string"><span class="delimiter">&quot;</span><span class="content">pubmed_medline.txt</span><span class="delimiter">&quot;</span></span>)
+<span class="keyword">for</span> R <span class="keyword">in</span> RC:
+    <span class="keyword">if</span> <span class="string"><span class="delimiter">'</span><span class="content">AB</span><span class="delimiter">'</span></span> <span class="keyword">in</span> R.keys():
+        print(R[<span class="string"><span class="delimiter">'</span><span class="content">AB</span><span class="delimiter">'</span></span>])
+        print(<span class="string"><span class="delimiter">'</span><span class="char">\n</span><span class="delimiter">'</span></span>)</code></pre></div></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-10-en.png" alt="vw 10 en" height="100%" /></div><div class="title">Figure 10. Using Metaknowledge to extract abstracts from records</div></section>
+<section><div class="paragraph"><p>We follow the wizard that will create the text map for us:</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-11-en.png" alt="vw 11 en" height="100%" /></div><div class="title">Figure 11. Follow the wizard for text maps - 1</div></section>
+<section><div class="paragraph"><p>Now we can choose the format of our input file.</p></div>
+<div class="paragraph"><p><code>Vosviewer</code> format: this is where we can load a file made of paragraphs:</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-13-en.png" alt="vw 13 en" height="100%" /></div><div class="title">Figure 12. Choosing the VosViewer format</div></section>
+<section><div class="paragraph"><p>But VosViewer has scientometrics functions, which actually can extract abstracts directly from MEDLINE entries (or Scopus, Web of Knowledge&#8230;&#8203;)</p></div>
+<div class="paragraph"><p>So we can actually come back to the file we had at the beginninf of this tutorial (<code>pubmed_medline.txt</code>) and choose the <code>PubMed</code> format:</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-14-en.png" alt="vw 14 en" height="100%" /></div><div class="title">Figure 13. Choosing the PuMed format</div></section>
+<section><div class="paragraph"><p>Loading a file in the PubMed / Medline format allows for a finer control:</p></div>
+<div class="ulist"><ul><li><p>we are asked if we want to load abstracts, titles, or both</p></li><li><p>it will remove copyright statements for us (such as "Copyright @Elsevier 2016") which often pollute the text.</p></li></ul></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-15-en.png" alt="vw 15 en" height="100%" /></div><div class="title">Figure 14. Choosing the PuMed format</div></section>
+<section><div class="paragraph"><p>The next screen, as before, asks if we prefer binary or full counting, and if we have a thesaurus file.</p></div></section>
+<section><div class="paragraph"><p>We must then select the minimum frequency of a term (number of times it occurs in total) to be included in the map:</p></div>
+<div class="imageblock stretch" style="text-align: center"><img src="images/vw-16-en.png" alt="vw 16 en" height="100%" /></div><div class="title">Figure 15. Minimum frequency for a term to be included</div></section>
+<section><div class="paragraph"><p>The next screen invites us to select the most "relevant" terms, with a parameter already set to a default value.</p></div>
+<div class="paragraph"><p>While the definition of "relevance" is difficult to explain briefly, its basic idea is that a term is all the more relevant that it tends to be associated with specific words, not with all words equally.</p></div>
+<div class="paragraph"><p>The developers of VosViewer explain their approach <a href="https://arxiv.org/ftp/arxiv/papers/1109/1109.2058.pdf">here</a>.</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-17-en.png" alt="vw 17 en" height="100%" /></div><div class="title">Figure 16. Selecting the most relevant words</div></section>
+<section><div class="paragraph"><p>The last screen of the wizard recaps in a table the terms which will be included  in the map, ranked by relevance.</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-18-en.png" alt="vw 18 en" height="100%" /></div><div class="title">Figure 17. Recap table</div></section>
+<section><div class="paragraph"><p>The result:</p></div></section>
+<section><div class="imageblock stretch" style="text-align: center"><img src="images/vw-19-en.png" alt="vw 19 en" height="100%" /></div><div class="title">Figure 18. Result - the map of terms</div></section>
+<section><h3>3. Importing a network (gml format or pajek)</h3></section>
+<section><div class="paragraph"><p>This part will not be developed in this tutoriaal as this is straightforward: you have a file in gml or pajek format, you import it:</p></div>
+<div class="imageblock stretch" style="text-align: center"><img src="images/vw-20-en.png" alt="vw 20 en" height="100%" /></div><div class="title">Figure 19. Importing a network</div></section>
+<section><div class="paragraph"><p>It should however be noted that the import of gml files created with Gephi generates error - possibly a result of the GML format being poorly defined?</p></div></section>
+<section id="__to_be_continued"><h2>(to be continued)</h2></section>
+<section id="_more_tutorials_on_vosviewer"><h2>More tutorials on vosviewer</h2></section>
+<section><div class="ulist"><ul><li><p>The manual of vosviewer is included as a pdf file in the zip when downloading the software.</p></li></ul></div></section>
+<section id="_the_end"><h2>The end!</h2><div class="paragraph"><p>    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+        var sc_project = 11271450;
+        var sc_invisible = 1;
+        var sc_security = "11271450";
+        var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+        document.write("<sc" + "ript type='text/javascript' src='" +
+            scJsHost +
+            "statcounter.com/counter/counter.js'></" + "script>");
+    </script>
+    <noscript><div class="statcounter"><a title="site stats"
+    href="http://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="//c.statcounter.com/11271450/0/11271450/1/" alt="site
+    stats"></a></div></noscript>
+    <!-- End of StatCounter Code for Default Guide --></p></div></section></div></div><script src="reveal.js-3.1.0/lib/js/head.min.js"></script><script src="reveal.js-3.1.0/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: false,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'white',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'linear',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 10.0,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js-3.1.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
