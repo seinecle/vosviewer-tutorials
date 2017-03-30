@@ -8,6 +8,7 @@ last modified: {docdate}
 :iconsfont:   font-awesome
 :revnumber: 1.0
 :example-caption!:
+:sourcedir: ../../../main/java
 
 :title-logo-image: vosviewer-logo.png[width="450" align="center"]
 
@@ -284,7 +285,7 @@ It should however be noted that the import of gml files created with Gephi gener
 //ST: !
 
 - The manual of vosviewer is included as a pdf file in the zip when downloading the software.
-- Vosviewer tutorials website, from which these slides are linked: https://seinecle.github.io/vosviewer-tutorials/
+
 
 == the end
 

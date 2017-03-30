@@ -300,7 +300,7 @@ It should however be noted that the import of gml files created with Gephi gener
 ==  !
 
 - The manual of vosviewer is included as a pdf file in the zip when downloading the software.
-
+- Vosviewer tutorials website, from which these slides are linked: https://seinecle.github.io/vosviewer-tutorials/
 
 
 ==  The end!
